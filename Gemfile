@@ -67,3 +67,5 @@ gem 'foreman', '~> 0.84.0'
 gem 'omniauth-facebook', '~> 4.0'
 gem 'omniauth-twitter', '~> 1.4'
 gem 'omniauth-github', '~> 1.3'
+
+gem 'acts_as_list'

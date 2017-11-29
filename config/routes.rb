@@ -18,6 +18,13 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
-  root to: 'home#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :lists do
+    member do
+      patch :move
+    end
+  end
+  resources :cards
+
+  root to: 'lists#index'
 end

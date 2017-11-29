@@ -3,7 +3,11 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
-    "coffeescript": "1.12.7"
+    "coffeescript": "1.12.7",
+    "vue": "^2.5.9",
+    "vue-loader": "^13.5.0",
+    "vue-template-compiler": "^2.5.9",
+    "vuedraggable": "^2.15.0"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.9.5"
