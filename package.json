@@ -7,6 +7,7 @@
     "vue": "^2.5.9",
     "vue-loader": "^13.5.0",
     "vue-template-compiler": "^2.5.9",
+    "vue-turbolinks": "^2.0.0",
     "vuedraggable": "^2.15.0"
   },
   "devDependencies": {
