@@ -8,7 +8,8 @@
     "vue-loader": "^13.5.0",
     "vue-template-compiler": "^2.5.9",
     "vue-turbolinks": "^2.0.0",
-    "vuedraggable": "^2.15.0"
+    "vuedraggable": "^2.15.0",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.9.5"
