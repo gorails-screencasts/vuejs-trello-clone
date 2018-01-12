@@ -39,14 +39,14 @@ export default {
       if (evt == undefined) { return }
 
       const element = evt.element
-      const list_index = window.store.lists.findIndex((list) => {
+      const list_index = window.store.state.lists.findIndex((list) => {
         return list.cards.find((card) => {
           return card.id === element.id
         })
       })
 
       var data = new FormData
-      data.append("card[list_id]", window.store.lists[list_index].id)
+      data.append("card[list_id]", window.store.state.lists[list_index].id)
       data.append("card[position]", evt.newIndex + 1)
 
       Rails.ajax({
