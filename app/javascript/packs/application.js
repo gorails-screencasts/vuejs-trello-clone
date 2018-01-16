@@ -24,6 +24,11 @@ window.store = new Vuex.Store({
     addList(state, data) {
       state.lists.push(data)
     },
+    moveList(state, data) {
+      const index = state.lists.findIndex(item => item.id == data.id)
+      state.lists.splice(index, 1)
+      state.lists.splice(data.position - 1, 0, data)
+    },
     addCard(state, data) {
       const index = state.lists.findIndex(item => item.id == data.list_id)
       state.lists[index].cards.push(data)

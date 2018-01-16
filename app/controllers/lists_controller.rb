@@ -66,6 +66,7 @@ class ListsController < ApplicationController
 
   def move
     @list.insert_at(list_params[:position].to_i)
+    ActionCable.server.broadcast "board", { commit: 'moveList', payload: render_to_string(:show, format: :json) }
     render action: :show
   end
 
