@@ -47,6 +47,7 @@ export default {
       data.append("list[position]", event.newIndex + 1)
 
       Rails.ajax({
+        beforeSend: () => true,
         url: `/lists/${this.lists[event.newIndex].id}/move`,
         type: "PATCH",
         data: data,
@@ -59,6 +60,7 @@ export default {
       data.append("list[name]", this.message)
 
       Rails.ajax({
+        beforeSend: () => true,
         url: "/lists",
         type: "POST",
         data: data,

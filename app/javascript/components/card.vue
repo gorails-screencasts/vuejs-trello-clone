@@ -44,6 +44,7 @@ export default {
       data.append("card[name]", this.name)
 
       Rails.ajax({
+        beforeSend: () => true,
         url: `/cards/${this.card.id}`,
         type: "PATCH",
         data: data,

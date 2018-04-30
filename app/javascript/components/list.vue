@@ -50,6 +50,7 @@ export default {
       data.append("card[position]", evt.newIndex + 1)
 
       Rails.ajax({
+        beforeSend: () => true,
         url: `/cards/${element.id}/move`,
         type: "PATCH",
         data: data,
@@ -63,6 +64,7 @@ export default {
       data.append("card[name]", this.message)
 
       Rails.ajax({
+        beforeSend: () => true,
         url: "/cards",
         type: "POST",
         data: data,
