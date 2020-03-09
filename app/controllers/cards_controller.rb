@@ -29,7 +29,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       if @card.save
 
-        ActionCable.server.broadcast "board", { commit: 'addCard', payload: render_to_string(:show, format: :json) }
+        ActionCable.server.broadcast "board", { commit: 'addCard', payload: render_to_string(:show, formats: [:json]) }
 
         format.html { redirect_to @card, notice: 'Card was successfully created.' }
         format.json { render :show, status: :created, location: @card }
@@ -46,7 +46,7 @@ class CardsController < ApplicationController
     respond_to do |format|
       if @card.update(card_params)
 
-        ActionCable.server.broadcast "board", { commit: 'editCard', payload: render_to_string(:show, format: :json) }
+        ActionCable.server.broadcast "board", { commit: 'editCard', payload: render_to_string(:show, formats: [:json]) }
 
         format.html { redirect_to @card, notice: 'Card was successfully updated.' }
         format.json { render :show, status: :ok, location: @card }
@@ -69,7 +69,7 @@ class CardsController < ApplicationController
 
   def move
     @card.update(card_params)
-    ActionCable.server.broadcast "board", { commit: 'moveCard', payload: render_to_string(:show, format: :json) }
+    ActionCable.server.broadcast "board", { commit: 'moveCard', payload: render_to_string(:show, formats: [:json]) }
     render action: :show
   end
 

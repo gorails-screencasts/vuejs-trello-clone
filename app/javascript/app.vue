@@ -1,7 +1,7 @@
 <template>
   <div class="board">
     <draggable v-model="lists" :options="{group: 'lists'}" class="dragArea d-inline-block" @end="listMoved">
-      <list v-for="(list, index) in lists" :list="list"></list>
+      <list v-for="(list, index) in lists" :key="list.id" :list="list"></list>
     </draggable>
 
     <div class="list">

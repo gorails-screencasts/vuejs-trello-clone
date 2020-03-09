@@ -7,6 +7,24 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+require("@rails/ujs")
+require("turbolinks").start()
+require("channels")
+
+import "bootstrap"
+
+Rails.start()
+
+document.addEventListener("turbolinks:load", () => {
+  $('.tooltip').tooltip()
+  $('[rel="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="popover"]').popover()
+  $('[data-toggle="dropdown"]').dropdown()
+  $('.toast').toast({ autohide: false })
+  $('#toast').toast('show')
+})
+
 import Vue from 'vue/dist/vue.esm'
 import Vuex from 'vuex'
 import App from '../app.vue'
